@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" style="-fx-padding: 20;" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.student.studentapp.StudentController">
+
+    <Label text="Student Management" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Student No.:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtStudentNumber" promptText="e.g. 2024-0001-SR-1"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtFirstName" promptText="e.g. Juan"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtLastName" promptText="e.g. Dela Cruz"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Course:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtCourse" promptText="e.g. BSIT, BSCS, BSCE..."
+                   GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+        <Label text="Year Level:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtYear" promptText="1 to 4"
+                   GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+        <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtEmail" promptText="e.g. juan@email.com"
+                   GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtPhone" promptText="e.g. 0912-345-6789"
+                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Add" onAction="#addStudent"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Update" onAction="#updateStudent"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="Delete" onAction="#deleteStudent"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="Clear" onAction="#clearFields"/>
+        <Button text="← Back" onAction="#goBack"/>
+    </HBox>
+
+    <Label fx:id="lblStatus" style="-fx-text-fill: green;"/>
+
+    <TableView fx:id="table" prefHeight="350">
+        <columns>
+            <TableColumn fx:id="colStudentNumber" text="Student No." prefWidth="100"/>
+            <TableColumn fx:id="colFirstName" text="First Name" prefWidth="100"/>
+            <TableColumn fx:id="colLastName" text="Last Name" prefWidth="100"/>
+            <TableColumn fx:id="colCourse" text="Course" prefWidth="80"/>
+            <TableColumn fx:id="colYear" text="Year" prefWidth="50"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="colPhone" text="Phone" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
