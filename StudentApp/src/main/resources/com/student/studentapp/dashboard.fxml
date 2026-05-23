@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.student.studentapp.DashboardController"
+            style="-fx-background-color: #f0f4f8;">
+
+    <VBox spacing="20" style="-fx-padding: 40;"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <Label text="Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <VBox HBox.hgrow="ALWAYS" alignment="CENTER"
+                  style="-fx-background-color: white; -fx-padding: 30;
+                         -fx-effect: dropshadow(gaussian, gray, 5, 0, 0, 2);">
+                <Label text="Total Students" style="-fx-text-fill: gray; -fx-font-size: 14px;"/>
+                <Label fx:id="lblTotalStudents" text="0"
+                       style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS" alignment="CENTER"
+                  style="-fx-background-color: white; -fx-padding: 30;
+                         -fx-effect: dropshadow(gaussian, gray, 5, 0, 0, 2);">
+                <Label text="Total Courses" style="-fx-text-fill: gray; -fx-font-size: 14px;"/>
+                <Label fx:id="lblTotalCourses" text="0"
+                       style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Manage Students" onAction="#goToStudents"
+                    prefWidth="160" prefHeight="40"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="Logout" onAction="#handleLogout"
+                    prefWidth="100" prefHeight="40"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-size: 14px;"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>
